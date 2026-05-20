@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import streamlit as st
-number_of_trials = st.slider('Número de tentativas?', 1, 1000, 10)
-start_button = st.button('Executar')
-
-if start_button:
-    st.write(f'Executando o experimento de {number_of_trials} tentativas.')
-
-st.write('Ainda não é um aplicativo funcional. Em construção.')
-=======
 import scipy.stats
 import streamlit as st
 import time
@@ -16,7 +6,7 @@ st.header('Jogando uma moeda')
 
 chart = st.line_chart([0.5])
 
-def toss_coin(n): # função que emula o lançamento de uma moeda
+def toss_coin(n):
 
     trial_outcomes = scipy.stats.bernoulli.rvs(p=0.5, size=n)
 
@@ -39,4 +29,4 @@ start_button = st.button('Executar')
 
 if start_button:
     st.write(f'Executando o experimento de {number_of_trials} tentativas.')
-
+    mean = toss_coin(number_of_trials)
