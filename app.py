@@ -1,3 +1,4 @@
+import streamlit as st
 number_of_trials = st.slider('Número de tentativas?', 1, 1000, 10)
 start_button = st.button('Executar')
 
